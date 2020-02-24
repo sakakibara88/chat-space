@@ -47,14 +47,15 @@ $white:#ffffff;
       display: block;
       font-weight: bold;
       padding: 20px 20px 40px 20px;
-      color: $white;
       &__name {
         font-size: 15px;
         height:    20px;
         margin-bottom: 5px;
+        color: $white;
       }
       &__message {
         font-size: 11px;
+        color: $white;
       }
     }
   }
