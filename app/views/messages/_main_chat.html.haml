@@ -2,39 +2,25 @@
   .main-caht__group-info
     .main-caht__group-info__left
       .main-caht__group-info__left__group-name
-        グループ名
+        = @group.name
       .main-caht__group-info__left__member-list
-        メンバー : sakakibara
+        Member : 
+        - @group.users.each do |group|
+          = group.name
     .main-caht__group-info__right-edit
-      = link_to "#", class: "main-caht__group-info__right-edit--btn" do
+      = link_to edit_group_path(@group), class: "main-caht__group-info__right-edit--btn" do
         Edit
         
   .main-caht__caht-space
-    .main-caht__caht-space__massge
-      .main-caht__caht-space__massge__name-time
-        .main-caht__caht-space__massge__name-time__name
-          masa
-        .main-caht__caht-space__massge__name-time__time
-          2020-02-21
-      .main-caht__caht-space__massge__text
-        おはよう！
-
-    .main-caht__caht-space__massge
-      .main-caht__caht-space__massge__name-time
-        .main-caht__caht-space__massge__name-time__name
-          masa
-        .main-caht__caht-space__massge__name-time__time
-          2020-02-21
-      .main-caht__caht-space__massge__text
-        おはよう！
-
+    = render @messages
+    
   .main-caht__message-form
-    .main-caht__message-form__post-form
-      .main-caht__message-form__post-form__text-img
-        %input(type="text" placeholder="type a message" class="main-caht__message-form__post-form__text-img--textbox")
-        .main-caht__message-form__post-form__text-img__img
-          %label
-            = icon('fa', 'image')
-            %input(type="file" class="main-caht__message-form__post-form__text-img__img--file")
-      %input(type="submit" value="send" class="main-caht__message-form__post-form--submit")/
- 
+    = form_for [@group, @message] do |f|
+      .main-caht__message-form__post-form
+        .main-caht__message-form__post-form__text-img
+          = f.text_field :content, placeholder: "type a message", class: "main-caht__message-form__post-form__text-img--textbox"
+          .main-caht__message-form__post-form__text-img__img
+            %label
+              = icon('fa', 'image')
+              = f.file_field :image, class:"main-caht__message-form__post-form__text-img__img--file"
+        = f.submit "send", class: "main-caht__message-form__post-form--submit"

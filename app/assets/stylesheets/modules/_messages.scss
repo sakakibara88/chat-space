@@ -47,6 +47,9 @@ $white:#ffffff;
       display: block;
       font-weight: bold;
       padding: 20px 20px 40px 20px;
+      &--link {
+        text-decoration: none;
+      }
       &__name {
         font-size: 15px;
         height:    20px;
@@ -98,12 +101,12 @@ $white:#ffffff;
     }
   }
   &__caht-space {
-    height: calc(100vh - 225px);
+    height: calc(100vh - 190px);
     &__massge {
-      margin: 35px 40px 0;
       &__name-time {
-        display: flex;
+        padding: 35px 40px 0;
         margin-bottom: 12px;
+        display: flex;
         &__name {
           font-size: 16px;
           color: #333333;
@@ -115,6 +118,7 @@ $white:#ffffff;
         }
       }
       &__text {
+        padding-left: 40px;
         font-size: 14px;
         color: #434a54;
         margin-bottom: 46px;
