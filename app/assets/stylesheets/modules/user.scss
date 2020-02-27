@@ -94,12 +94,14 @@
       display: inline-block;
       color: #d65f4c;
       font-weight: 400;
+      width: 100%;
     }
   }
 
   .field-input {
     .field_with_errors {
       position: relative;
+      width: 100%;
 
       &:after {
         content: '';
