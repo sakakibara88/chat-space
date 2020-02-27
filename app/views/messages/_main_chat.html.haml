@@ -15,7 +15,7 @@
     = render @messages
     
   .main-caht__message-form
-    = form_for [@group, @message] do |f|
+    = form_for [@group, @message],class: "message--form" do |f|
       .main-caht__message-form__post-form
         .main-caht__message-form__post-form__text-img
           = f.text_field :content, placeholder: "type a message", class: "main-caht__message-form__post-form__text-img--textbox"

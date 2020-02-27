@@ -8,6 +8,7 @@ $white:#ffffff;
   width:  300px;
   background-color: #253141;
   float: left;
+  position: fixed;
   &__user-name {
     height: 100px;
     position: relative;
@@ -70,6 +71,8 @@ $white:#ffffff;
   float: right;
   background-color: #fafafa;
   &__group-info {
+    position: fixed;
+    width: calc(100vw - 300px);
     height: 100px;
     display: flex;
     justify-content: space-between;
@@ -101,7 +104,9 @@ $white:#ffffff;
     }
   }
   &__caht-space {
+    overflow: scroll;
     height: calc(100vh - 190px);
+    margin-top: 100px;
     &__massge {
       &__name-time {
         padding: 35px 40px 0;
@@ -126,10 +131,13 @@ $white:#ffffff;
     }
   }
   &__message-form {
+    position: fixed;
+    width: calc(100vw - 300px);
     height: 90px;
     background-color: #d2d2d2;
     &__post-form {
       display: flex;
+      overflow: scroll;
       padding: 20px 40px 20px 50px;
       &__text-img {
         width: 100%;
