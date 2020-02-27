@@ -20,7 +20,7 @@
         .main-caht__message-form__post-form__text-img
           = f.text_field :content, placeholder: "type a message", class: "main-caht__message-form__post-form__text-img--textbox"
           .main-caht__message-form__post-form__text-img__img
-            %label
-              = icon('fa', 'image')
+            = f.label :image do
+              = icon('fas', 'image')
               = f.file_field :image, class:"main-caht__message-form__post-form__text-img__img--file"
-        = f.submit "send", class: "main-caht__message-form__post-form--submit"
+        = f.submit "Send", class: "main-caht__message-form__post-form--submit"
