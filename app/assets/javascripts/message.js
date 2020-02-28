@@ -1,39 +1,39 @@
 $(function(){
   
   var buildHTML = function(message) {
-    let name_created_at = `<div  class="main-caht__caht-space__massge" >` +
-    `<div class="main-caht__caht-space__massge__name-time" data-message-id=` + message.id + `>` +
-      `<div class="main-caht__caht-space__massge__name-time__name" >` +
-        message.user_name +
-      `</div>` +
-      `<div class="main-caht__caht-space__massge__name-time__time">` +
-        message.created_at +
-      `</div>` +
-    `</div>`
+    let name_created_at = `<div  class="main-caht__caht-space__massge" >
+    <div class="main-caht__caht-space__massge__name-time" data-message-id= ${message.id}>
+      <div class="main-caht__caht-space__massge__name-time__name" >
+        ${message.user_name}
+      </div>
+      <div class="main-caht__caht-space__massge__name-time__time">
+        ${message.created_at}
+      </div>
+    </div>`
     
     if (message.content && message.image) {
-      var html = name_created_at +
-        `<div class="lower-message">` +
-          `<p class="lower-message__content">` +
-            message.content +
-          `</p>` +
-          `<img src="` + message.image + `" class="lower-message__image" >` +
-        `</div>` +
-      `</div>`
+      var html = `${name_created_at}
+        <div class="lower-message"> 
+          <p class="lower-message__content">
+            ${message.content} 
+          </p>
+          <img src=" ${message.image} " class="lower-message__image" >
+        </div>
+        </div>`
     } else if (message.content) {
-      var html = name_created_at +
-        `<div class="main-caht__caht-space__massge__text">` +
-          `<p class="lower-message__content">` +
-            message.content +
-          `</p>` +
-        `</div>` +
-      `</div>`
+      var html = `${name_created_at}
+        <div class="main-caht__caht-space__massge__text">
+          <p class="lower-message__content">
+            ${message.content} 
+          </p>
+        </div> 
+      </div>`
     } else if (message.image) {
-      var html = name_created_at +
-        `<div class="lower-message">` +
-          `<img src="` + message.image + `" class="lower-message__image" >` +
-        `</div>` +
-      `</div>`
+      var html = `${name_created_at}
+        <div class="lower-message">
+          <img src="  ${message.image}  " class="lower-message__image" >
+        </div>
+      </div>`
     };
     return html;
   };
