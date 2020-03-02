@@ -28,7 +28,14 @@ set :keep_releases, 5
 # デプロイ処理が終わった後、Unicornを再起動するための記述
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
-  task :restart do
-    invoke 'unicorn:restart'
+  task :stop do
+    invoke 'unicorn:stop'
+  end
+  task :start do
+    invoke 'unicorn:start'
   end
 end
+
+# set :rbenv_path, '/home/deploy/.rbenv'
+# set :bundle_path, './vendor/bundle'
+# set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} #{fetch(:rbenv_path)}/bin/rbenv exec"
